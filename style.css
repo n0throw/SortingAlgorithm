@@ -1,0 +1,25 @@
+canvas
+{
+	border: 1px solid black;
+}
+
+select 
+{
+	width: 120px;
+}
+
+div.wrapper 
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+div.canvas_block, div.description_block 
+{
+    width: 500px;
+}
+
+div.header_block, div.formula_block 
+{
+    width: 250px;
+}

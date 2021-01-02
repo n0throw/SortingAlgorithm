@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css" integrity="sha384-qCEsSYDSH0x5I45nNW4oXemORUZnYFtPy/FqB/OjqxabTMW5HVaaH9USK4fN3goV" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.js" integrity="sha384-YFVvRUwgqxkAVN9bmAVLsKilmOKfQLyUx0ZlmDNs0aBUTsvMLnRxE3Km0NrZa0i9" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="DescriptionsMaps.js"></script>
+		<script type="text/javascript" src="Rect.js"></script>
+		<script type="text/javascript" src="sort.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+
+		<title>Алгоритмы сортировки</title>
+	</head>
+	<body onload="load();">
+		<div>
+			<div class="wrapper">
+				<div class="canvas_block">
+					<canvas id="cnv" width="500" height="500"></canvas>
+				<div>
+				<select id="Changesort" onchange="ChangeSort();">
+					<option disabled>Алгоритмы устойчивой сортировки</option>
+					<option value="BubbleSort" selected>Сортировка пузырьком</option>
+					<option value="CocktailSort">Сортировка перемешиванием</option>
+					<option value="InsertionSort">Сортировка вставками</option>
+					<option value="GnomeSort">Гномья сортировка</option>
+					<option value="MergeSort">Сортировка слиянием</option>
+					<option value="TreeSort">Сортировка с помощью двоичного дерева</option>
+					<option value="TimSort">Сортировка Timsort</option>
+					<option disabled>Алгоритмы неустойчивой сортировки</option>
+					<option value="SelectionSort">Сортировка выбором</option>
+					<option value="CombSort">Сортировка расчёской</option>
+					<option value="ShellSort">Сортировка Шелла</option>
+					<option value="HeapSort">Пирамидальная сортировка</option>
+					<option value="SmoothSort">Плавная сортировка</option>
+					<option value="QuickSort">Быстрая сортировка</option>
+					<option value="IntroSort">Интроспективная сортировка</option>
+					<option value="PatienceSorting">Терпеливая сортировка</option>
+					<option value="StoogeSort">Stooge sort</option>
+					<option disabled>Непрактичные алгоритмы сортировки</option>
+					<option value="BogoSort">Bogosort</option>
+					<option value="BeadSort">Гравитационная сортировка</option>
+					<option value="PancakeSorting">Блинная сортировка</option>
+					<option value="PermSort">Сортировка перестановкой</option>
+				</select>
+				<button onclick="shuffle();">Перемешать</button>
+				<button onclick="start();">Сортировать</button>
+			</div>
+			<div>
+				<select id="Changespeed" onchange="ChangeSpeed();">
+					<option disabled>Выбор скорости</option>
+					<option value="Slow">Медленная</option>
+					<option value="Normal" selected>Средняя</option>
+					<option value="Fast">Быстрая</option>
+				</select>
+			</div>
+				</div>
+				<div class="description_block">
+					<h1 align="center">Сложность</h1>
+					<div class="wrapper">
+						<div class="header_block">
+							<h3>Лучший случай</h3>
+						</div>
+						<div class="formula_block">
+							<span id="BestCaseFormula"></span>
+						</div>
+					</div>
+					<div class="wrapper">
+						<div class="header_block">
+							<h3>Обычный случай</h3>
+						</div>
+						<div class="formula_block">
+							<span id="AverageCaseFormula"></span>
+						</div>
+					</div>
+					<div class="wrapper">
+						<div class="header_block">
+							<h3>Худший случай</h3>
+						</div>
+						<div class="formula_block">
+							<span id="WorstCaseFormula"></span>
+						</div>
+					</div>
+					<hr>
+					<h1 align="center">Описание</h1>
+					<span id="description"></span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
