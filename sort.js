@@ -71,7 +71,29 @@ async function InsertionSort()
 
 async function GnomeSort()
 {
-	
+	var i = 1, j = 2;
+	while (i < Rects.length)
+	{
+		if (Rects[i - 1].index < Rects[i].index)
+		{
+			i = j; 
+			j++; 
+		}
+		else
+		{ 
+			var t = Rects[i-1]; 
+			Rects[i-1] = Rects[ i ]; 
+			Rects[ i ] = t;
+			i--;
+			if (i == 0)
+			{
+				i = j; 
+				j++; 
+			}
+			draw();
+			await sleep(Speed);
+		}
+	}
 }
 
 async function MergeSort()
